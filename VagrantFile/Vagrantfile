@@ -1,23 +1,18 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 Vagrant.configure("2") do |config|
-
   # ── VM1 : Ubuntu (Testing) ──────────────────────────────
   config.vm.define "VM1-Grupo-ASANCHEZ" do |vmHost1|
     vmHost1.vm.box = "ubuntu/jammy64"
     vmHost1.vm.hostname = "VM1-Grupo-ASANCHEZ"
     vmHost1.vm.network "private_network", ip: "192.168.56.10"
-
     vmHost1.vm.synced_folder 'compartido_Host1/', '/home/vagrant/compartido',
       owner: 'vagrant', group: 'vagrant'
-
     vmHost1.ssh.insert_key = true
-
     vmHost1.vm.disk :disk, size: "5GB", name: "disk_5G_vm1"
     vmHost1.vm.disk :disk, size: "3GB", name: "disk_3G_vm1"
     vmHost1.vm.disk :disk, size: "2GB", name: "disk_2G_vm1"
     vmHost1.vm.disk :disk, size: "1GB", name: "disk_1G_vm1"
-
     vmHost1.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.name = "VM1-Grupo-ASANCHEZ"
@@ -25,34 +20,29 @@ Vagrant.configure("2") do |config|
       vb.linked_clone = true
       vb.customize ['modifyvm', :id, '--graphicscontroller', 'vmsvga']
     end
-
     vmHost1.vm.provision "shell", path: "script_Enable_ssh_password.sh"
     vmHost1.vm.provision "shell", privileged: false, path: "script_Fix_history.sh"
     vmHost1.vm.provision "shell", path: "instala_paquetes.sh"
-
+    vmHost1.vm.provision "shell", path: "LVM/lvm_setup.sh"
+    vmHost1.vm.provision "shell", path: "script_ssh_keygen.sh"
     vmHost1.vm.provision "shell", inline: <<-SHELL
       echo "192.168.56.10 VM1-Grupo-ASANCHEZ" >> /etc/hosts
       echo "192.168.56.11 VM2-Grupo-ASANCHEZ" >> /etc/hosts
       echo "vagrant ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vagrant
     SHELL
   end
-
   # ── VM2 : Fedora (Producción) ───────────────────────────
   config.vm.define "VM2-Grupo-ASANCHEZ" do |vmHost2|
     vmHost2.vm.box = "generic/fedora38"
     vmHost2.vm.hostname = "VM2-Grupo-ASANCHEZ"
     vmHost2.vm.network "private_network", ip: "192.168.56.11"
-
     vmHost2.vm.synced_folder 'compartido_Host2/', '/home/vagrant/compartido',
       owner: 'vagrant', group: 'vagrant'
-
     vmHost2.ssh.insert_key = true
-
     vmHost2.vm.disk :disk, size: "5GB", name: "disk_5G_vm2"
     vmHost2.vm.disk :disk, size: "3GB", name: "disk_3G_vm2"
     vmHost2.vm.disk :disk, size: "2GB", name: "disk_2G_vm2"
     vmHost2.vm.disk :disk, size: "1GB", name: "disk_1G_vm2"
-
     vmHost2.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.name = "VM2-Grupo-ASANCHEZ"
@@ -60,16 +50,15 @@ Vagrant.configure("2") do |config|
       vb.linked_clone = true
       vb.customize ['modifyvm', :id, '--graphicscontroller', 'vmsvga']
     end
-
     vmHost2.vm.provision "shell", path: "script_Enable_ssh_password.sh"
     vmHost2.vm.provision "shell", privileged: false, path: "script_Fix_history.sh"
     vmHost2.vm.provision "shell", path: "instala_paquetes_fedora.sh"
-
+    vmHost2.vm.provision "shell", path: "LVM/lvm_setup.sh"
+    vmHost2.vm.provision "shell", path: "script_ssh_keygen.sh"
     vmHost2.vm.provision "shell", inline: <<-SHELL
       echo "192.168.56.10 VM1-Grupo-ASANCHEZ" >> /etc/hosts
       echo "192.168.56.11 VM2-Grupo-ASANCHEZ" >> /etc/hosts
       echo "vagrant ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vagrant
     SHELL
   end
-
 end
