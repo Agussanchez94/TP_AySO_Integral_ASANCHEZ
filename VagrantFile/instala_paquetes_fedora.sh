@@ -3,8 +3,8 @@
 echo "Actualizando repositorios..."
 sudo dnf update -y > /dev/null
 
-echo "Instalando paquetes base..."
-sudo dnf install -y tree ansible ca-certificates curl htop tmux
+echo "Instalando paquetes base incluyendo lvm2 y sshpass..."
+sudo dnf install -y tree ansible ca-certificates curl htop tmux lvm2 sshpass
 
 echo "Instalando speedtest-cli..."
 sudo dnf install -y speedtest-cli || pip3 install speedtest-cli
@@ -25,4 +25,3 @@ sudo usermod -a -G docker vagrant
 
 echo "Habilitando y arrancando Docker..."
 sudo systemctl enable --now docker
-
