@@ -1,1 +1,1 @@
-{"name":"generic/fedora38","version":"4.3.12","provider":"virtualbox","directory":"boxes/generic-VAGRANTSLASH-fedora38/4.3.12/amd64/virtualbox"}
+{"name":"bento/fedora-39","version":"202407.23.0","provider":"virtualbox","directory":"boxes/bento-VAGRANTSLASH-fedora-39/202407.23.0/amd64/virtualbox"}
