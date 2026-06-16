@@ -1,0 +1,9 @@
+[all:children]
+testing
+produccion
+
+[testing]
+VM1-Grupo-ASANCHEZ ansible_host=127.0.0.1 ansible_port=22 ansible_user=vagrant ansible_connection=local
+
+[produccion]
+VM2-Grupo-ASANCHEZ ansible_host=10.0.2.2 ansible_port=2223 ansible_user=vagrant ansible_ssh_pass=vagrant

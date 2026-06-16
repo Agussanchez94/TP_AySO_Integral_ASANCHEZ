@@ -1,0 +1,34 @@
+---
+- name: Crear grupo secundario ASANCHEZ
+  group:
+    name: ASANCHEZ
+    state: present
+
+- name: Crear grupos principales
+  group:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - G_R1
+    - G_R2
+    - G_R3
+    - G_R4
+    - G_R5
+    - G_R6
+
+- name: Crear usuarios
+  user:
+    name: "{{ item.nombre }}"
+    group: "{{ item.grupo }}"
+    groups: ASANCHEZ
+    shell: /bin/bash
+    password: "{{ 'vagrant' | password_hash('sha512') }}"
+    create_home: yes
+    state: present
+  loop:
+    - { nombre: 'r1_asanchez', grupo: 'G_R1' }
+    - { nombre: 'r2_asanchez', grupo: 'G_R2' }
+    - { nombre: 'r3_fabricio', grupo: 'G_R3' }
+    - { nombre: 'r4_asanchez', grupo: 'G_R4' }
+    - { nombre: 'r5_asanchez', grupo: 'G_R5' }
+    - { nombre: 'r6_asanchez', grupo: 'G_R6' }

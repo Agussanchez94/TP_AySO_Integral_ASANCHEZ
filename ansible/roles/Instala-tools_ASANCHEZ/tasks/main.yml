@@ -1,0 +1,25 @@
+---
+- name: Instalar herramientas en Ubuntu
+  ansible.builtin.apt:
+    name:
+      - htop
+      - tmux
+      - python3-pip
+    state: present
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Instalar herramientas en otras distros
+  ansible.builtin.package:
+    name:
+      - htop
+      - tmux
+    state: present
+  when: ansible_distribution != "Ubuntu"
+
+- name: Instalar speedtest-cli via pip
+  ansible.builtin.pip:
+    name: speedtest-cli
+    state: present
+    executable: pip3
+  when: ansible_distribution == "Ubuntu"

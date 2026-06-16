@@ -1,0 +1,7 @@
+---
+- hosts: all
+  roles:
+    - TP_INI
+    - Alta_Usuarios_ASANCHEZ
+    - Sudoers_ASANCHEZ
+    - Instala-tools_ASANCHEZ
