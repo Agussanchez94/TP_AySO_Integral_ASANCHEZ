@@ -2,6 +2,6 @@
 r1_asanchez:G_R1:Lider
 r2_asanchez:G_R2:Arquitectura
 r3_asanchez:G_R3:Automatizacion_N1
-r4_asanchez:G_R4:Automatizacion_N2
-r5_asanchez:G_R5:Microservicios
-r6_asanchez:G_R6:Testing
+r4_fpapapetti:G_R4:Automatizacion_N2
+r5_fpapetti:G_R5:Microservicios
+r6_fpapetti:G_R6:Testing
