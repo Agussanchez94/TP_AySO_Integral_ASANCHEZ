@@ -24,14 +24,14 @@ done
 
 if ! vgs vg_datos &> /dev/null; then
     echo "Creando VG vg_datos..."
-    vgcreate vg_datos $DISCO_5G $DISCO_3G
+    vgcreate vg_datos $DISCO_5G
 else
     echo "VG vg_datos ya existe, saltando..."
 fi
 
 if ! vgs vg_temp &> /dev/null; then
     echo "Creando VG vg_temp..."
-    vgcreate vg_temp $DISCO_2G
+    vgcreate vg_temp $DISCO_3G
 else
     echo "VG vg_temp ya existe, saltando..."
 fi
