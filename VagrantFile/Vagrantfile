@@ -26,8 +26,8 @@ Vagrant.configure("2") do |config|
     vmHost1.vm.provision "shell", path: "LVM/lvm_setup.sh"
     vmHost1.vm.provision "shell", path: "script_ssh_keygen.sh"
     vmHost1.vm.provision "shell", inline: <<-SHELL
-      echo "192.168.56.10 VM1_GRUPO_S/P" >> /etc/hosts
-      echo "192.168.56.11 VM2_GRUPO_S/P" >> /etc/hosts
+      echo "192.168.56.10 VM1-GRUPO-ASANCHEZ" >> /etc/hosts
+      echo "192.168.56.11 VM2-GRUPO-ASANCHEZ" >> /etc/hosts
       echo "vagrant ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vagrant
     SHELL
   end
