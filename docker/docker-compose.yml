@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    web:
+        # image: agussanchez94/tp-div_314_grupo_asanchez  # Lider
+        image: fabriciopapetti/tp-div_314_grupo_asanchez  # R3 - Papetti
+        ports:
+            - "8081:80"
+        volumes:
+            - ./web/file:/usr/share/nginx/html/file
