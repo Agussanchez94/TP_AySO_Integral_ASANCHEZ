@@ -18,30 +18,29 @@ Tecnicatura Universitaria en Programación - UTN FRA
 
 ## Estructura del Repositorio
 
-\`\`\`
+.
 ├── Bash_script/
 │   ├── alta_usuarios/
-│   │   ├── alta_usuarios.sh      # Script de alta de usuarios
-│   │   └── Lista_Usuarios.txt    # Lista de usuarios a crear
+│   │   ├── alta_usuarios.sh          # Script de alta de usuarios
+│   │   └── Lista_Usuarios.txt        # Lista de usuarios a crear
 │   └── check_url/
-│       ├── check_URL.sh          # Script de chequeo de URLs
-│       └── Lista_URL.txt         # Lista de URLs a chequear
+│       ├── check_URL.sh              # Script de chequeo de URLs
+│       └── Lista_URL.txt             # Lista de URLs a chequear
 ├── ansible/
-│   ├── ansible.cfg               # Configuración de Ansible
-│   ├── playbook.yml              # Playbook principal
+│   ├── ansible.cfg                   # Configuración de Ansible
+│   ├── playbook.yml                  # Playbook principal
 │   ├── inventory/
-│   │   └── hosts                 # Inventario de VMs
+│   │   └── hosts                     # Inventario de VMs
 │   └── roles/
-│       ├── TP_INI/               # Crea archivo de datos del grupo
-│       ├── Alta_Usuarios_ASANCHEZ/  # Crea usuarios y grupos
-│       ├── Sudoers_ASANCHEZ/     # Configura sudo sin password
-│       └── Instala-tools_ASANCHEZ/  # Instala htop, tmux, speedtest-cli
+│       ├── TP_INI/                   # Crea archivo de datos del grupo
+│       ├── Alta_Usuarios_ASANCHEZ/   # Crea usuarios y grupos
+│       ├── Sudoers_ASANCHEZ/         # Configura sudo sin password
+│       └── Instala-tools_ASANCHEZ/   # Instala htop, tmux y speedtest-cli
 ├── VagrantFile/
-│   └── Vagrantfile               # Configuración de las VMs
+│   └── Vagrantfile                   # Configuración de las VMs
 ├── LVM/
-│   └── lvm_setup.sh              # Configuración de LVM
-└── integrantes.txt               # Lista de integrantes
-\`\`\`
+│   └── lvm_setup.sh                  # Configuración de LVM
+└── integrantes.txt                   # Lista de integrantes
 
 ## Infraestructura (R2)
 
