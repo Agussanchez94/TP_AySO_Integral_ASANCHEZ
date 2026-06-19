@@ -17,7 +17,7 @@ Tecnicatura Universitaria en Programación - UTN FRA
 | R3 - Automatización N1 | Fabricio | Papetti |
 
 ## Estructura del Repositorio
-
+```sh
 .
 ├── Bash_script/
 │   ├── alta_usuarios/
@@ -41,6 +41,7 @@ Tecnicatura Universitaria en Programación - UTN FRA
 ├── LVM/
 │   └── lvm_setup.sh                  # Configuración de LVM
 └── integrantes.txt                   # Lista de integrantes
+```
 
 ## Infraestructura (R2)
 
