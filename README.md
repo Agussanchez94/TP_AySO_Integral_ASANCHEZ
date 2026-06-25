@@ -11,9 +11,9 @@ Tecnicatura Universitaria en Programación - UTN FRA
 
 ## Integrantes
 
-| Rol | Nombre | Apellido |
-|-----|--------|----------|
-| R1 - Líder | Agustin | Sanchez |
+| Rol | Nombre | Apellido | Legajo |
+|-----|--------|----------|--
+| R1 - Líder | Agustin | Sanchez | 120572|
 | R3 - Automatización N1 | Fabricio | Papetti |
 
 ## Estructura del Repositorio
@@ -61,23 +61,23 @@ Tecnicatura Universitaria en Programación - UTN FRA
 
 ### Alta de Usuarios
 Crea usuarios y grupos en el sistema a partir de una lista:
-\`\`\`bash
+```bash
 sudo bash Bash_script/alta_usuarios/alta_usuarios.sh
-\`\`\`
+```
 
 ### Chequeo de URLs
 Verifica si una lista de URLs están online:
-\`\`\`bash
+```bash
 sudo bash Bash_script/check_url/check_URL.sh
-\`\`\`
+```
 
 ## Ansible (R4)
 
 Ejecutar el playbook desde VM1:
-\`\`\`bash
+```bash
 cd ansible/
 ansible-playbook -i inventory/hosts playbook.yml
-\`\`\`
+```
 
 ### Roles
 - **TP_INI** - Crea `/tmp/Grupo/datos.txt` con info del grupo
