@@ -14,7 +14,7 @@ Tecnicatura Universitaria en Programación - UTN FRA
 | Rol | Nombre | Apellido | Legajo |
 |-----|--------|----------|--
 | R1 - Líder | Agustin | Sanchez | 120572|
-| R3 - Automatización N1 | Fabricio | Papetti |
+| R3 - Automatización N1 | Fabricio | Papetti | 120729|
 
 ## Estructura del Repositorio
 ```sh
